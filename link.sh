@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-SRC="${HOME}/code/codex-user-skills"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SRC="$SCRIPT_DIR"
 DEST="${HOME}/.codex/skills"
 
 mkdir -p "$DEST"
