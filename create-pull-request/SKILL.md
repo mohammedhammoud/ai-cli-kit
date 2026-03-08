@@ -7,10 +7,11 @@ Execution permissions:
 
 - You may use `git` to:
   - detect current branch
+  - detect the relevant remote for the current branch
   - detect default branch
   - create and switch branches
   - compute diff
-  - push the current branch to origin
+  - push the current branch to the relevant remote
 - You may use `gh` CLI to:
   - detect existing PR for current branch
   - read PR body
@@ -25,10 +26,13 @@ Do not implement heuristics or pre-classification in bash.
 
 Workflow:
 
-1. Detect the default branch and the current branch.
+1. Detect the current branch, the relevant remote, and the default branch.
+   - Prefer the current branch upstream remote when available.
+   - Otherwise prefer `origin` if it exists and fits the repository setup.
+   - If no safe remote can be determined, stop and report the blocker.
 2. If the current branch is the default branch, stop and create/switch to a new feature branch before continuing. Do not create or update a PR from the default branch.
-3. Ensure the current branch is pushed to `origin` before diffing or opening/updating a PR.
-4. Run `git diff origin/<default-branch>...HEAD`.
+3. Ensure the current branch is pushed to the relevant remote before diffing or opening/updating a PR.
+4. Run `git diff <remote>/<default-branch>...HEAD`.
 5. Include unstaged changes only if the user explicitly asks.
 6. Reason directly over raw diff content.
 7. Generate:

@@ -16,10 +16,20 @@ Repository layout used here:
 
 ## 2. Install / Sync
 
+Prerequisites:
+
+- `git`
+- Codex with local skills support
+- `gh` CLI for workflows that create or update pull requests
+- GitHub authentication configured for `gh` when using PR automation
+
 ```bash
+git clone <your-fork-or-repo-url> ~/code/codex-skills
 cd ~/code/codex-skills
 ./link.sh
 ```
+
+The clone path above is only an example. Any local checkout path works.
 
 What this does:
 
@@ -48,6 +58,7 @@ If you want a mostly hands-off flow, run `$lazy` to create a branch, implement t
 - Do not modify `~/.codex/skills/.system` manually.
 - Prefer small, focused commits.
 - Re-run `./link.sh` after adding a new skill folder.
+- Some skills assume a GitHub-hosted repository and detect the relevant remote at runtime.
 
 ## 5. Skills
 

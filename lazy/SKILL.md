@@ -26,9 +26,12 @@ What this skill owns:
 Workflow:
 
 1. Understand the request and inspect only the code needed.
-2. Detect the repository default branch.
-   - Prefer `origin/HEAD`.
+2. Detect the relevant remote and the repository default branch.
+   - Prefer the current branch upstream remote when available.
+   - Otherwise prefer `origin` if it exists and fits the repository setup.
+   - Prefer `<remote>/HEAD` for default branch detection when available.
    - Fallback to the local default branch if needed.
+   - If no safe remote can be determined for push or PR work, stop and report the blocker.
 3. Switch to the default branch before starting new work.
    - If checkout is unsafe because of local changes, stop and report the blocker.
 4. Create a new feature branch from the default branch.
@@ -45,7 +48,7 @@ Workflow:
    - a concrete blocker prevents safe progress
 11. Stage the intended changes.
 12. Apply the `commit` skill's standards and create the commit.
-13. Push the branch to `origin`.
+13. Push the branch to the relevant remote.
 14. Apply the `create-pull-request` skill's standards and create or update a draft PR targeting the default branch.
 
 Interaction override:
