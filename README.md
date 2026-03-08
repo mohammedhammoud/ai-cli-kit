@@ -1,6 +1,6 @@
 # codex-skills
 
-My personal Codex skills and workflows, versioned in Git.
+My personal Codex skills and workflows.
 
 I am sharing this repository publicly as a reference for how I work with AI-assisted development. These skills are optimized for my own setup and preferences, but parts of them may still be useful or adaptable for others.
 
@@ -14,7 +14,7 @@ Follow OpenAI's official guidance for skill structure and conventions:
 
 - <https://platform.openai.com/docs/guides/skills>
 
-Repository layout used here:
+This repository uses the following layout:
 
 - `<skill-name>/SKILL.md`
 - `<skill-name>/scripts/...` (optional)
@@ -37,32 +37,27 @@ cd ~/code/codex-skills
 
 The clone path above is only an example. Any local checkout path works.
 
-What this does:
+What `./link.sh` does:
 
 - Creates `~/.codex/skills` if needed
 - Symlinks each skill directory from this repo into `~/.codex/skills`
 - Keeps `~/.codex/skills/.system` untouched
 
-## 3. How We Work
+## 3. Typical Workflow
 
-Standard flow:
+1. For bug investigations, run `$debug` first for strict, step-by-step root-cause analysis.
+2. Make changes, or run `$refactor` for behavior-preserving structural cleanup.
+3. Run `$review`.
+4. Fix the changes if needed.
+5. Run `$commit`.
+6. Accept the suggested commit message.
+7. Run `$create-pull-request`.
+8. Continue if everything looks good.
 
-1. For bug investigations, run `$debug` first to perform strict, step-by-step root-cause analysis.
-2. Make changes (or run `$refactor` for behavior-preserving structural cleanup)
-3. Run `$review`
-4. Fix changes if needed
-5. Run `$commit`
-6. Accept commit message
-7. Run `$create-pull-request`
-8. Continue if everything looks good
+For a mostly hands-off flow, I use `$lazy` to create a branch, implement the change, review it, commit it, push it, and open or update a draft PR.
 
-If you want a mostly hands-off flow, run `$lazy` to create a branch, implement the change, review it, commit it, push it, and open or update a draft PR.
+## 4. Repo Notes
 
-## 4. Notes
-
-- This repo should only contain user-defined skills.
-- Do not modify `~/.codex/skills/.system` manually.
-- Prefer small, focused commits.
 - Re-run `./link.sh` after adding a new skill folder.
 - Some skills assume a GitHub-hosted repository and detect the relevant remote at runtime.
 
