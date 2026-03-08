@@ -34,6 +34,7 @@ Do NOT scan the entire repository.
 Do NOT run tests.
 Do NOT modify files.
 Do NOT commit.
+If the diff alone is not enough to prove a claim, say so explicitly and lower confidence instead of guessing.
 
 ---
 
@@ -49,6 +50,9 @@ Detect:
 - Missing tests
 - Accessibility issues
 - Architectural drift
+
+Only report missing tests when the diff clearly adds or changes behavior that should be covered.
+Only report architectural drift when it is directly visible in the diff.
 
 Do NOT invent issues just to suggest changes.
 It is valid to conclude that everything looks correct.

@@ -9,6 +9,7 @@ mkdir -p "$DEST"
 
 for d in "$SRC"/*; do
   [ -d "$d" ] || continue
+  [ -f "$d/SKILL.md" ] || continue
   name="$(basename "$d")"
   [ "$name" = ".git" ] && continue
   [ "$name" = ".github" ] && continue

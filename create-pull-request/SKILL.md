@@ -50,7 +50,7 @@ Workflow:
 8. Validate before applying:
 
 - title must match this regex:
-  `^(feat|fix|refactor|chore|docs|test|ci|perf)($begin:math:text$\[a\-z0\-9\.\_\/\-\]\+$end:math:text$)?: [a-z0-9][a-z0-9 -]{0,69}$`
+  `^(feat|fix|refactor|chore|docs|test|ci|perf)(\([a-z0-9._/-]+\))?: [a-z0-9][a-z0-9 -]{0,69}$`
 - body MUST contain BOTH markers exactly once:
   - `<!-- auto-pr-metadata:start -->`
   - `<!-- auto-pr-metadata:end -->`
