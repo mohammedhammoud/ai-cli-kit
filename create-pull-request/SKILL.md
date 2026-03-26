@@ -63,7 +63,7 @@ Workflow:
 5. State explicitly which diff source is being used.
 6. If the user explicitly asks to include unstaged changes, allow that override and state it explicitly.
 7. Reason directly over raw diff content from the selected source.
-8. Generate:
+8. Generate candidate metadata:
 
 - title: Conventional Commit style, lowercase, max 72 chars, unless the repository defines a different allowed convention
 - body: MUST always be wrapped in this exact marker block (even when creating a new PR):
@@ -109,12 +109,16 @@ Workflow:
 
 If PR exists:
 
-- Update the PR title.
-- Update ONLY the content inside the markers:
+- First evaluate whether the current PR title and current marker block still accurately reflect the current diff.
+- If they are still accurate, keep them as-is, even when wording differs from newly generated candidate metadata.
+- Update the PR title ONLY when the current title is outdated, inaccurate, or invalid by repository/title rules.
+- Update ONLY the content inside the markers when the current marker content is outdated, inaccurate, missing required sections, or markers are missing:
   - `<!-- auto-pr-metadata:start -->`
   - `<!-- auto-pr-metadata:end -->`
+- Inside the marker block, edits may add, remove, or rewrite bullets/sections as needed to match the current diff.
 - Preserve all user-authored text outside the markers.
 - If markers do not exist yet in the PR body, prepend the marker block at the top and keep the existing body below it unchanged.
+- When both title and marker block are already accurate for the current diff, do not send an update call.
 
 If PR does not exist:
 
