@@ -1,6 +1,7 @@
 ---
 name: lazy
 description: Fully automate a user request from a fresh branch off the default branch through implementation, review, safe refactor, commit, push, and draft PR, auto-iterating until the result is good enough or a real blocker is found
+argument-hint: "Describe the task and constraints for end-to-end delivery"
 ---
 
 Use this skill when the user wants a mostly hands-off delivery flow.

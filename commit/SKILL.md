@@ -1,6 +1,7 @@
 ---
 name: commit
 description: Generate and optionally apply a Conventional Commit from staged changes
+argument-hint: "Stage changes first, then run without extra arguments"
 ---
 
 Generate a single best Conventional Commit message from staged changes.

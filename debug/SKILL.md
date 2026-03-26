@@ -1,6 +1,7 @@
 ---
 name: debug
 description: Debug a bug from an entrypoint or symptom, prove root cause, propose a minimal patch
+argument-hint: "[entrypoint] [expected] [actual] [repro] [mode quick|strict]"
 ---
 
 Use when the user wants root-cause debugging starting from a specific file.

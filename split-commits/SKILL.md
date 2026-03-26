@@ -1,6 +1,7 @@
 ---
 name: split-commits
 description: Group current changes into multiple commitlint-compliant commits and apply on confirmation
+argument-hint: "Optional: focus area or grouping preference"
 ---
 
 Analyze current repository changes and split them into multiple coherent commits.

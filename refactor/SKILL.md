@@ -1,6 +1,7 @@
 ---
 name: refactor
 description: Propose minimal, safe code improvements without changing behavior
+argument-hint: "staged | changes | <file-path>"
 ---
 
 Use this skill to improve structure, readability, and maintainability without changing behavior.

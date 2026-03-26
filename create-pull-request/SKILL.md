@@ -1,6 +1,7 @@
 ---
 name: create-pull-request
 description: Create or update a draft PR from git diff (title + body)
+argument-hint: "Optional: say if unstaged changes should be included"
 ---
 
 Execution permissions:

@@ -1,6 +1,7 @@
 ---
 name: review
 description: Review staged or unstaged changes for bugs, risks, and minimal risk-reducing fixes
+argument-hint: "staged | changes"
 ---
 
 Expected input (required):
