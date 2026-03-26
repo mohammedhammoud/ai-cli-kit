@@ -1,6 +1,6 @@
 ---
 name: debug
-description: Debug a bug from a given entrypoint file, prove root cause, propose a minimal patch
+description: Debug a bug from an entrypoint or symptom, prove root cause, propose a minimal patch
 ---
 
 Use when the user wants root-cause debugging starting from a specific file.
@@ -11,7 +11,7 @@ Repository policy:
 - Repository-specific constraints on validation, file scope, coding standards, and output override this skill's generic defaults.
 - If repository policy conflicts with the generic rules below, prefer repository policy and state the conflict briefly if needed.
 
-Required input (must be present):
+Preferred input:
 
 1. Entrypoint file path
 2. Expected behavior
@@ -22,10 +22,21 @@ Optional:
 
 - Error message / stack trace / logs (if any)
 
-If any required item is missing:
+Minimum start condition:
 
-- Print exactly which item(s) are missing.
-- Exit.
+- Entrypoint file path OR one concrete symptom (error/log/failing behavior).
+
+If preferred items are missing:
+
+- Start with available context.
+- List missing items briefly as "helpful context" (not blockers).
+- Continue investigation and ask for only the next most valuable missing detail when needed.
+
+Debug modes:
+
+- `quick` (default): prioritize fast triage, likely root cause, and smallest verifiable next step.
+- `strict`: require full evidence chain before proposing a fix.
+- If the user does not specify mode, use `quick`.
 
 Rules:
 
@@ -36,15 +47,19 @@ Rules:
 
 Workflow:
 
-1. Read the entrypoint file.
+1. Start from provided entrypoint or symptom source.
 2. Trace the execution path step-by-step.
-3. If not found in entrypoint, follow the call chain one layer at a time until proven.
+3. If not found, follow the call chain one layer at a time.
+4. In `quick` mode, provide the best evidence-backed hypothesis and the next verification step when proof is incomplete.
+5. In `strict` mode, continue until root cause is proven end-to-end before proposing a fix.
 
 Output:
 
-1. Root cause (file + line + explanation)
-2. Proof (why this matches the observed behavior)
-3. Minimal fix (exact patch/snippet)
+1. Root cause or best current hypothesis (file + line + explanation)
+2. Proof status:
+   - proven evidence, or
+   - strongest evidence so far + next verification step
+3. Minimal fix (exact patch/snippet) when justified
 4. Risk level (low|medium|high)
 
 Then print exactly:
