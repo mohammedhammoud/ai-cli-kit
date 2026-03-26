@@ -71,3 +71,4 @@ For a mostly hands-off flow, I use the `lazy` skill to create a branch, implemen
 - `lazy`: Run the end-to-end delivery flow from a fresh branch through validation, commit, push, and draft PR (`lazy/SKILL.md`)
 - `refactor`: Propose minimal, safe code improvements without changing behavior (`refactor/SKILL.md`)
 - `review`: Review staged or unstaged changes for bugs, risks, and minimal risk-reducing fixes (`review/SKILL.md`)
+- `split-commits`: Group current changes into multiple commitlint-compliant commits and apply on confirmation (`split-commits/SKILL.md`)
