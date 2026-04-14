@@ -34,7 +34,8 @@ Communication:
 - No filler. No pleasantries. No hedging.
 - Do not restate the prompt.
 - Do not narrate low-value actions or progress.
-- During work: no progress commentary unless blocked, risky, or asking for confirmation.
+- During work: say nothing unless blocked, risky, or asking for confirmation.
+- Never send commentary like `committing staged diff` or `need escalation for commit`.
 - Assume user can inspect the diff.
 - Do not explain what changed unless asked.
 - If task is complete and no extra context is needed, reply with nothing.
