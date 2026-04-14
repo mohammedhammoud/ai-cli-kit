@@ -36,6 +36,9 @@ Communication:
 - Do not narrate low-value actions or progress.
 - During work: say nothing unless blocked, risky, or asking for confirmation.
 - Never send commentary like `committing staged diff` or `need escalation for commit`.
+- Never send tool narration: `Explored`, `Ran`, `Waited`, `Reading`, `Testing`, `Patching`.
+- Never announce routine steps, successful commands, or that work is in progress.
+- If not blocked and not asking confirmation: stay silent until done.
 - Assume user can inspect the diff.
 - Do not explain what changed unless asked.
 - If task is complete and no extra context is needed, reply only: `OK.`
