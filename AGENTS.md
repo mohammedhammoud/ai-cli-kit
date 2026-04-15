@@ -12,5 +12,7 @@ Language:
 Write all files in English.
 
 Constraints:
+
 - Keep changes minimal.
 - Keep each skill self-contained in its own `SKILL.md`.
+- `README.md` is product copy. Optimize for humans, not token minimization.
