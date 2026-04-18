@@ -57,8 +57,6 @@ What `./install.sh` does:
 6. Accept the suggested commit message.
 7. Use `create-or-update-pr`.
 
-For a mostly hands-off flow, use `lazy`.
-
 ## Repo Notes
 
 - Re-run `./install.sh` after changing `src/skills/` or `src/instructions.md`.
@@ -71,7 +69,5 @@ For a mostly hands-off flow, use `lazy`.
 - `commit`: Generate and optionally apply a Conventional Commit from staged changes
 - `create-or-update-pr`: Update an existing PR for the current branch, or create a draft PR from the diff
 - `debug`: Debug from an entrypoint or symptom, then propose a minimal patch
-- `lazy`: Run the end-to-end flow from branch creation through validation, commit, push, and draft PR
-- `rebase`: Rebase the current branch onto the default branch, resolving only safe issues
 - `refactor`: Propose minimal, safe code improvements without changing behavior
 - `split-commits`: Group current changes into multiple coherent commits and apply them on confirmation
