@@ -21,7 +21,7 @@ Scope:
 
 Rules:
 
-- all shell commands: use `rtk <cmd>`, never raw command; `git status` = bad, `rtk git status` = good.
+- all shell commands: use `rtk <cmd>` via the `bash` tool, never raw command; `git status` = bad, `rtk git status` = good.
 - Inspect diff only.
 - No full-repo scan.
 - Do not test, modify files, or commit.

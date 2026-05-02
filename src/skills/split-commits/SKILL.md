@@ -8,7 +8,7 @@ Analyze current changes. Split into coherent commits.
 
 If commitlint config exists, it is authoritative.
 
-All shell commands: use `rtk <cmd>`, never raw command; `git status` = bad, `rtk git status` = good.
+All shell commands: use `rtk <cmd>` via the `bash` tool, never raw command; `git status` = bad, `rtk git status` = good.
 
 Workflow:
 

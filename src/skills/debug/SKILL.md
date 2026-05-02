@@ -15,6 +15,7 @@ Input:
 
 Rules:
 
+- all shell commands: use `rtk <cmd>` via the `bash` tool, never raw command; `git status` = bad, `rtk git status` = good.
 - Assume bug exists.
 - Every claim needs code evidence.
 - No broad refactors. No unrelated cleanup.

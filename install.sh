@@ -10,6 +10,7 @@ INSTRUCTIONS_SOURCE="${SRC_ROOT}/instructions.md"
 ALL_CLIS=(
   codex
   copilot
+  pi
 )
 
 SELECTED_CLIS=()
@@ -63,6 +64,11 @@ get_cli_config() {
       CLI_SKILLS_DEST="${CLI_HOME}/skills"
       CLI_INSTRUCTION_DEST="${CLI_HOME}/copilot-instructions.md"
       ;;
+    pi)
+      CLI_HOME="${HOME}/.pi/agent"
+      CLI_SKILLS_DEST="${CLI_HOME}/skills"
+      CLI_INSTRUCTION_DEST="${CLI_HOME}/APPEND_SYSTEM.md"
+      ;;
     *)
       log_warn "$cli: unknown cli"
       return 1
@@ -90,6 +96,10 @@ pick_clis() {
         ;;
       copilot)
         SELECTED_CLIS=("copilot")
+        break
+        ;;
+      pi)
+        SELECTED_CLIS=("pi")
         break
         ;;
       all)
